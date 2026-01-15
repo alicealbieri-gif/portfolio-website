@@ -1,28 +1,35 @@
 /* BRAND COLORS:
 Main: Black (#000000) & White (#ffffff)
 Accent: Electric Blue (#2F11CA)
+Footer BG: Light Gray (#f0f0f0)
 */
 
-/* --- 1. Base Settings & Typography --- */
+/* --- 1. Global Box Sizing --- */
+* {
+  box-sizing: border-box;
+}
+
+/* --- 2. Base Settings & Typography --- */
 body {
   background-color: #ffffff;
-  /* Updated to Inter to match 'Inter Display' request */
   font-family: 'Inter', sans-serif; 
   font-size: 16px; 
-  font-weight: 400; /* Regular for paragraphs */
+  font-weight: 400; 
   line-height: 1.6; 
-  color: #000000; /* Pure black text */
+  color: #000000;
+  margin: 0;
 }
 
 h1, h2, h3, h4 {
-  line-height: 1.2; /* Tighter line height for display text */
-  font-weight: 700; /* Bold for titles */
+  line-height: 1.2; 
+  font-weight: 700; 
   color: #000000;
+  margin-top: 0;
   margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 3em; /* Made slightly larger for impact */
+  font-size: 3em; 
 }
 
 h2 {
@@ -33,17 +40,18 @@ h3 {
   font-size: 1.75em;
 }
 
-/* --- 2. Images --- */
+/* --- 3. Images --- */
 img {
   width: 100%;
-  display: block; /* Removes tiny gaps under images */
+  height: auto;
+  display: block; 
 }
 
-/* --- 3. Links --- */
+/* --- 4. Links --- */
 a {
-  color: #2F11CA; /* Electric Blue */
-  text-decoration: none;
-  font-weight: 700; /* Bold links for visibility */
+  color: #2F11CA; 
+  text-decoration: underline; /* Default underline per mentor feedback */
+  font-weight: 400; /* Regular weight to prevent line-height issues */
   transition: color 0.3s ease;
 }
 
@@ -52,7 +60,7 @@ a:visited {
 }
 
 a:hover, a:focus {
-  color: #000000; /* Turns black on hover */
+  color: #000000; 
   text-decoration: underline;
 }
 
@@ -60,75 +68,144 @@ a:active {
   color: #000000;
 }
 
-/* --- 4. Button Styling --- */
+/* --- 5. Layout Classes --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 15px; 
+}
 
-/* Primary Button (Solid Electric Blue) */
+.row {
+  margin: 40px 0; 
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e0e0e0; 
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+/* --- 6. Header & Navigation --- */
+header {
+  padding: 20px 0;
+  background-color: #ffffff;
+  border-bottom: 2px solid #000000; 
+}
+
+header .container {
+  text-align: center; 
+}
+
+.logo {
+  max-width: 250px; 
+  margin-bottom: 20px;
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav > ul {
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+}
+
+nav > ul > li {
+  display: inline-block; 
+  margin: 0 15px; 
+}
+
+/* Navigation Links Specifics */
+nav > ul > li > a {
+  text-transform: uppercase;
+  font-weight: 700; /* Nav stays bold */
+  color: #000000;
+  font-size: 0.9em;
+  text-decoration: none; /* No underline for menu */
+}
+
+nav > ul > li > a:hover {
+  color: #2F11CA; 
+  text-decoration: none;
+}
+
+/* --- 7. Hero Section --- */
+.section-hero {
+  background-color: #f4f4f4; 
+  padding: 80px 0;
+  text-align: center; 
+}
+
+.section-hero h1 {
+  font-size: 3em;
+  max-width: 800px;
+  margin: 0 auto 20px auto; 
+}
+
+.section-hero span {
+  color: #2F11CA; 
+}
+
+/* --- 8. Work & Content Sections --- */
+.section-work {
+  padding: 60px 0;
+}
+
+/* --- 9. Buttons --- */
 .button {
   display: inline-block; 
-  background-color: #2F11CA; /* Electric Blue */
-  color: #ffffff !important; /* Force white text */
+  background-color: #2F11CA; 
+  color: #ffffff !important; 
   font-weight: 700;
   padding: 12px 24px;
-  border-radius: 0px; /* Sharp corners fit the modern B&W aesthetic better */
   border: 2px solid #2F11CA; 
-  transition: 0.3s all;
-  text-decoration: none;
+  text-decoration: none !important; 
+  margin-top: 10px;
 }
 
 .button:hover {
-  background-color: #ffffff; /* White background */
-  color: #2F11CA !important; /* Blue text */
-  border: 2px solid #2F11CA;
-  text-decoration: none;
+  background-color: #ffffff; 
+  color: #2F11CA !important; 
 }
 
-/* Secondary Button (Outline style for Footer/Contact) */
+/* Footer Contact Button (Black outline for light gray footer) */
 .button.contact {
   background-color: transparent;
-  color: #000000 !important; /* Black text */
+  color: #000000 !important; 
   text-transform: uppercase;
-  border: 2px solid #000000; /* Black border */
+  border: 2px solid #000000; 
 }
 
 .button.contact:hover {
-  background-color: #000000;
-  color: #ffffff !important; /* White text on hover */
+  background-color: #000000; 
+  color: #ffffff !important; 
+  border-color: #000000;
 }
 
-/* --- 5. Layout Sections --- */
-#hero {
-  padding: 60px 0;
-  max-width: 800px; /* Limits width for better readability */
-}
-
-#hero span {
-  color: #2F11CA; /* Highlights your name in Electric Blue */
-}
-
-#work {
-  padding: 40px 0;
-}
-
-#contact {
-  padding: 40px 0;
-}
-
-/* Footer specific styling to ensure contrast */
+/* --- 10. Footer --- */
 footer {
-  background-color: #000000;
-  color: #ffffff;
-  padding: 40px 20px;
-  margin-top: 40px;
-}
-
-footer a {
-  color: #ffffff; /* Links in footer are white */
-}
-
-footer a:hover {
-  color: #2F11CA; /* Links in footer turn blue on hover */
+  background-color: #f0f0f0; /* Light Gray */
+  color: #000000; /* Black Text */
+  padding: 60px 0;
+  text-align: center;
 }
 
 footer h2 {
-  color: #ffffff;
+  color: #000000; 
+}
+
+footer a {
+  color: #000000; 
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #2F11CA; 
+}
+
+/* Footer Social Icons Size */
+footer ul li img {
+  width: 20px; 
+  height: auto;
+  display: block; 
 }

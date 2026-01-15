@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ANIMA CREATIVA STUDIO</title>
+    <title>Pla del Vent - Alice Albieri</title>
     
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     
@@ -18,66 +18,86 @@
   <body>
 
     <header>
-      <div>
-        <img src="img/anima-creativa/logo-black.svg" alt="ANIMA CREATIVA STUDIO Logo">
+      <div class="container">
+        <img src="img/anima-creativa/logo-black.svg" alt="ANIMA CREATIVA STUDIO Logo" class="logo">
         <nav>
+          <ul>
             <li><a href="index.html">Work</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </nav>
       </div>
     </header>
 
     <main>
-      <section id="pla-del-vent">
-        <div>
+      <section id="project-hero">
+        <div class="container">
            <h1>Pla del Vent</h1>
            <p>Development of interior design concept, selection of material specifications, furnishings and lighting.</p>
         </div>
       </section>
 
-      <section>
-        <div>
+      <section id="gallery">
+        <div class="container">
           <h2>Project Gallery</h2>
           
-          <div>
-            <picture>
-              <source srcset="https://placehold.co/600x400?text=Pla+del+Vent+View+1+Mobile" media="(max-width:767px)">
-              <img src="img/pla-del-vent/pla-del-vent-cover.webp" alt="Pla del Vent Interior View 1">
-            </picture>
-            <p>Concept visualization of the main living area.</p>
-          </div>
+          <ul style="list-style: none; padding: 0;">
+            
+            <li style="margin-bottom: 40px;">
+              <figure style="margin: 0;">
+                <picture>
+                  <source srcset="https://placehold.co/600x400?text=Pla+del+Vent+View+1+Mobile" media="(max-width:767px)">
+                  <img src="img/pla-del-vent/pla-del-vent-cover.webp" alt="Pla del Vent Interior View 1">
+                </picture>
+                <figcaption style="margin-top: 10px; font-style: italic;">
+                  Concept visualization of the main living area.
+                </figcaption>
+              </figure>
+            </li>
 
-          <div>
-            <picture>
-              <source srcset="https://placehold.co/600x400?text=Details+Mobile" media="(max-width:767px)">
-              <img src="https://placehold.co/1200x800?text=Details+Desktop" alt="Material Selection">
-            </picture>
-            <p>Material board and lighting selection.</p>
-          </div>
+            <li style="margin-bottom: 40px;">
+              <figure style="margin: 0;">
+                <picture>
+                  <source srcset="https://placehold.co/600x400?text=Details+Mobile" media="(max-width:767px)">
+                  <img src="https://placehold.co/1200x800?text=Details+Desktop" alt="Material Selection">
+                </picture>
+                <figcaption style="margin-top: 10px; font-style: italic;">
+                  Material board and lighting selection.
+                </figcaption>
+              </figure>
+            </li>
+
+          </ul>
 
         </div>
       </section>
     </main>
 
-    <footer>
-      <div>
+    <footer id="contact">
+      <div class="container">
         <h2>Get in Touch</h2>
         <p>
           Do you like my work and want to discuss opportunities? Please get in touch.<br> 
           Call: <a href="tel:+31600000000">+31 6 00 00 00 00</a> or 
           <a href="mailto:alice@animacreativa.com" class="button contact">Email me</a>
         </p>
+        
         <div>
-          <ul>
+          <ul style="list-style: none; padding: 0; display: flex; gap: 15px; justify-content: center;">
             <li>
-              <a href="https://www.linkedin.com/in/alice-albieri" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.linkedin.com/in/alice-albieri" target="_blank">
+                <img src="img/icons/linkedin.svg" alt="LinkedIn" width="30" height="30">
+              </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/animacreativastudio?igsh=dHpncHk1MHhrcmJ1&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.instagram.com/animacreativastudio?igsh=dHpncHk1MHhrcmJ1&utm_source=qr" target="_blank">
+                <img src="img/icons/instagram.svg" alt="Instagram" width="30" height="30">
+              </a>
             </li>
           </ul>
         </div>
+        
         <p>Copyright Alice Albieri 2026</p>
       </div>
     </footer>

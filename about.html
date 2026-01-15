@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ANIMA CREATIVA STUDIO</title>
+    <title>About Alice Albieri - Anima Creativa</title>
     
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     
@@ -18,8 +18,8 @@
   <body>
 
     <header>
-      <div>
-        <img src="img/anima-creativa/logo-black.svg" alt="ANIMA CREATIVA STUDIO Logo" width="450">
+      <div class="container">
+        <img src="img/anima-creativa/logo-black.svg" alt="ANIMA CREATIVA STUDIO Logo" width="450" class="logo">
         <nav>
           <ul>
             <li><a href="index.html">Work</a></li>
@@ -31,46 +31,49 @@
     </header>
 
     <main>
-      <div>
-        <div>
-          <h1>About Me</h1>
-        </div>
-      </div>
-
-      <div>
-        <picture>
-           <source srcset="https://placehold.co/600x400?text=Alice+Mobile" media="(max-width:450px)">
-           <img src="img/anima-creativa/profile-picture.webp" alt="Alice Albieri Profile">
-        </picture>
-      </div>
-
-      <div>
-        
-        <div>
-           <h2>My Story</h2>
-           <p>I'm a creative designer based in the Netherlands, with over 4 years of experience in bringing innovative design concepts to life.</p>
-           <p>Guatemalan-born with Italian heritage, I've built my creative practice across four countries: Guatemala, Italy, Spain, and the Netherlands. My deep connection to diverse cultures naturally translates into work that bridges interior design, experience creation, gastronomy, and the intersections where these disciplines meet.</p>
+      
+      <section id="about-hero" class="section-hero">
+        <div class="container">
+           <h1>About Me</h1>
            
-           <a href="files/CV_Alice Albieri_Product Designer.pdf" target="_blank" class="button">Download my CV</a>
-        </div>
+           <picture>
+              <source srcset="https://placehold.co/600x400?text=Alice+Mobile" media="(max-width:450px)">
+              <img src="img/anima-creativa/profile-picture.webp" alt="Alice Albieri Profile" style="max-width: 100%; height: auto; margin: 20px 0;">
+           </picture>
 
-        <div>
+           <p style="font-size: 1.2em; font-weight: 700;">I'm a creative designer based in the Netherlands, with over 4 years of experience in bringing innovative design concepts to life.</p>
+        </div>
+      </section>
+
+      <section id="about-story">
+        <div class="container">
+           <div class="row"> <div>
+                <h2>My Story</h2>
+                <p>Guatemalan-born with Italian heritage, I've built my creative practice across four countries: Guatemala, Italy, Spain, and the Netherlands. My deep connection to diverse cultures naturally translates into work that bridges interior design, experience creation, gastronomy, and the intersections where these disciplines meet.</p>
+                
+                <a href="files/CV_Alice Albieri_Product Designer.pdf" target="_blank" class="button">Download my CV</a>
+             </div>
+           </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="container">
           <h2>Skills & Tools</h2>
           
-          <div>
-            
+          <div class="row">
             <div>
-              <h3>Relevant Skills</h3>
-              <ul>
-                <li>Interior Design</li>
-                <li>UX/UI Design</li>
-                <li>Graphic, Branding & Identity</li>
-                <li>Concept Development</li>
-                <li>Food Design</li>
-              </ul>
+               <h3>Relevant Skills</h3>
+               <ul>
+                 <li>Interior Design</li>
+                 <li>UX/UI Design</li>
+                 <li>Graphic, Branding & Identity</li>
+                 <li>Concept Development</li>
+                 <li>Food Design</li>
+               </ul>
             </div>
 
-            <div>
+            <div style="margin-top: 20px;">
                <h3>Tools I Use</h3>
                <ul>
                  <li>Adobe Creative Suite</li>
@@ -80,15 +83,14 @@
                  <li>SketchUp</li>
                </ul>
             </div>
-
           </div>
         </div>
+      </section>
 
-      </div>
     </main>
 
     <footer id="contact">
-      <div>
+      <div class="container">
         <h2>Get in Touch</h2>
         <p>
           Do you like my work and want to discuss opportunities? Please get in touch.<br> 
@@ -97,15 +99,15 @@
         </p>
         
         <div>
-          <ul>
+          <ul style="list-style: none; padding: 0; display: flex; gap: 15px; justify-content: center;">
             <li>
               <a href="https://www.linkedin.com/in/alice-albieri" target="_blank">
-                <i class="fab fa-linkedin"></i>
+                <img src="img/icons/linkedin.svg" alt="LinkedIn" width="30" height="30">
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/animacreativastudio?igsh=dHpncHk1MHhrcmJ1&utm_source=qr" target="_blank">
-                <i class="fab fa-instagram"></i>
+                <img src="img/icons/instagram.svg" alt="Instagram" width="30" height="30">
               </a>
             </li>
           </ul>
