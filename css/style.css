@@ -1,110 +1,134 @@
-/* Colors used:
-Primary Color (Text/Dark): #2b2b2b
-Background Color: #ffffff
-Accent Color (Terra Cotta): #ff7f50
-Secondary Accent (Darker Terra Cotta): #cc6540
+/* BRAND COLORS:
+Main: Black (#000000) & White (#ffffff)
+Accent: Electric Blue (#2F11CA)
 */
 
 /* --- 1. Base Settings & Typography --- */
 body {
   background-color: #ffffff;
-  font-family: 'Lato', sans-serif; /* Google Font */
+  /* Updated to Inter to match 'Inter Display' request */
+  font-family: 'Inter', sans-serif; 
   font-size: 16px; 
-  font-weight: 300; 
+  font-weight: 400; /* Regular for paragraphs */
   line-height: 1.6; 
-  color: #2b2b2b;
+  color: #000000; /* Pure black text */
 }
 
 h1, h2, h3, h4 {
-  line-height: 1.4;
+  line-height: 1.2; /* Tighter line height for display text */
+  font-weight: 700; /* Bold for titles */
+  color: #000000;
+  margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 2.75em;
-  font-weight: 700;
+  font-size: 3em; /* Made slightly larger for impact */
 }
 
 h2 {
   font-size: 2.25em;
-  font-weight: 700;
 }
 
 h3 {
   font-size: 1.75em;
-  font-weight: 400;
 }
 
 /* --- 2. Images --- */
-/* Set 100% width for responsiveness */
 img {
   width: 100%;
+  display: block; /* Removes tiny gaps under images */
 }
 
 /* --- 3. Links --- */
 a {
-  color: #ff7f50;
-  text-decoration: none; /* No underlining by default */
+  color: #2F11CA; /* Electric Blue */
+  text-decoration: none;
+  font-weight: 700; /* Bold links for visibility */
+  transition: color 0.3s ease;
 }
 
 a:visited {
-  color: #ff7f50;
+  color: #2F11CA;
 }
 
 a:hover, a:focus {
-  color: #cc6540;
+  color: #000000; /* Turns black on hover */
   text-decoration: underline;
 }
 
 a:active {
-  color: #994c30;
+  color: #000000;
 }
 
 /* --- 4. Button Styling --- */
-/* Primary Button Style (Read More / Download CV) */
+
+/* Primary Button (Solid Electric Blue) */
 .button {
   display: inline-block; 
-  background-color: #ff7f50;
-  color: #ffffff; 
-  font-weight: 400;
-  padding: 10px 20px;
-  border-radius: 3px;
-  border-bottom: 2px solid #994c30; 
-  transition: 0.2s opacity;
-  text-decoration: none; /* Ensures button text isn't underlined */
+  background-color: #2F11CA; /* Electric Blue */
+  color: #ffffff !important; /* Force white text */
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 0px; /* Sharp corners fit the modern B&W aesthetic better */
+  border: 2px solid #2F11CA; 
+  transition: 0.3s all;
+  text-decoration: none;
 }
 
 .button:hover {
-  opacity: 0.8; 
+  background-color: #ffffff; /* White background */
+  color: #2F11CA !important; /* Blue text */
+  border: 2px solid #2F11CA;
   text-decoration: none;
-  color: #ffffff;
 }
 
-/* Secondary Button Style (Email Contact in Footer) */
+/* Secondary Button (Outline style for Footer/Contact) */
 .button.contact {
   background-color: transparent;
-  color: #ff7f50;
+  color: #000000 !important; /* Black text */
   text-transform: uppercase;
-  border: 2px solid #ff7f50;
-  border-bottom: 2px solid #ff7f50; /* Overwrites the bottom border from .button */
+  border: 2px solid #000000; /* Black border */
 }
 
 .button.contact:hover {
-  background-color: #ff7f50;
-  color: #ffffff;
+  background-color: #000000;
+  color: #ffffff !important; /* White text on hover */
 }
 
-/* --- 5. Layout Sections (IDs) --- */
-/* We will style these more in the next exercise, 
-   but for now, let's add some breathing room */
-
+/* --- 5. Layout Sections --- */
 #hero {
-  padding: 20px 0;
+  padding: 60px 0;
+  max-width: 800px; /* Limits width for better readability */
+}
+
+#hero span {
+  color: #2F11CA; /* Highlights your name in Electric Blue */
 }
 
 #work {
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 #contact {
-  padding: 20px 0;
+  padding: 40px 0;
+}
+
+/* Footer specific styling to ensure contrast */
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #ffffff; /* Links in footer are white */
+}
+
+footer a:hover {
+  color: #2F11CA; /* Links in footer turn blue on hover */
+}
+
+footer h2 {
+  color: #ffffff;
 }
