@@ -44,10 +44,69 @@
           <h2>Selected Work</h2>
 
           <div class="row">
-            <div>
+            
+            <div class="col-md-6 col-lg-7">
+              <svg width="100%" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                
+                <defs>
+                  <circle id="moon-shape" cx="0" cy="0" r="12" />
+                  <mask id="crescent-mask">
+                    <rect x="-20" y="-20" width="40" height="40" fill="white"/>
+                    <circle cx="6" cy="0" r="11" fill="black"/> 
+                  </mask>
+                  <mask id="gibbous-mask">
+                    <rect x="-20" y="-20" width="40" height="40" fill="white"/>
+                    <circle cx="16" cy="0" r="12" fill="black"/> 
+                  </mask>
+                  <mask id="half-mask">
+                    <rect x="-12" y="-12" width="12" height="24" fill="white"/>
+                  </mask>
+                </defs>
+
+                <g transform="translate(200, 150)">
+                  
+                  <g class="moon-ring-anim">
+                    
+                    <use href="#moon-shape" fill="#2F11CA" transform="translate(0, -90)" />
+
+                    <use href="#moon-shape" fill="black" mask="url(#gibbous-mask)" transform="rotate(30) translate(0, -90) rotate(-90)" />
+
+                    <use href="#moon-shape" fill="black" mask="url(#gibbous-mask)" transform="rotate(60) translate(0, -90) rotate(-75)" />
+
+                    <use href="#moon-shape" fill="black" mask="url(#half-mask)" transform="rotate(90) translate(0, -90) rotate(-90)" />
+
+                    <use href="#moon-shape" fill="black" mask="url(#crescent-mask)" transform="rotate(120) translate(0, -90) rotate(-105)" />
+
+                    <use href="#moon-shape" fill="black" mask="url(#crescent-mask)" transform="rotate(150) translate(0, -90) rotate(-90)" />
+
+                    <circle r="11" fill="none" stroke="black" stroke-width="1.5" transform="translate(0, 90)" />
+
+                    <use href="#moon-shape" fill="black" mask="url(#crescent-mask)" transform="rotate(210) translate(0, -90) rotate(90)" />
+
+                    <use href="#moon-shape" fill="black" mask="url(#crescent-mask)" transform="rotate(240) translate(0, -90) rotate(75)" />
+
+                    <use href="#moon-shape" fill="black" mask="url(#half-mask)" transform="rotate(270) translate(0, -90) rotate(90)" />
+
+                    <use href="#moon-shape" fill="black" mask="url(#gibbous-mask)" transform="rotate(300) translate(0, -90) rotate(75)" />
+
+                    <use href="#moon-shape" fill="black" mask="url(#gibbous-mask)" transform="rotate(330) translate(0, -90) rotate(90)" />
+
+                  </g> </g> </svg>
+            </div>
+
+            <div class="col-md-6 col-lg-5" style="display: flex; align-items: center;">
+              <p style="font-weight: 700; font-size: 1.5em; margin: 0;">
+                "Just like the moon, always shine even if you are far from feeling full."
+              </p>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-lg-7">
               <img src="img/pla-del-vent/pla-del-vent-cover.webp" alt="Pla del Vent Project Image">
             </div>
-            <div>
+            <div class="col-md-6 col-lg-5">
               <h3>01. Pla del Vent (Interior Design)</h3>
               <p>Development of interior design concept, selection of material specifications, furnishings and lighting.</p>
               <a href="pla-del-vent.html" class="button">View Project</a>
@@ -55,10 +114,10 @@
           </div>
 
           <div class="row">
-            <div>
+            <div class="col-md-6 col-lg-7">
                <img src="img/te-rifaste/te-rifaste-cover.webp" alt="Te Rifaste Project Image">
             </div>
-            <div>
+            <div class="col-md-6 col-lg-5">
               <h3>02. Te Rifaste (Graphic Design / Branding)</h3>
               <p>Development of brand identity, logo and merchandise for a group of 3 successful influencers in Guatemala.</p>
               <a href="#" class="button">View Project</a>
@@ -66,10 +125,10 @@
           </div>
 
           <div class="row">
-            <div>
+            <div class="col-md-6 col-lg-7">
                <img src="img/foodibee/foodibee-cover.webp" alt="Foodibee Project Image">
             </div>
-            <div>
+            <div class="col-md-6 col-lg-5">
               <h3>03. Foodibee (UX/UI Design)</h3>
               <p>Led the entire end-to-end design process, from initial concept to final handoff. The work involved foundational user research which informed an iterative cycle of prototyping and usability testing.</p>
               <a href="#" class="button">View Project</a>
@@ -77,10 +136,10 @@
           </div>
 
           <div class="row">
-            <div>
+            <div class="col-md-6 col-lg-7">
                <img src="img/restaurant-casa-bassa/restaurant-casa-bassa-cover.webp" alt="Restaurant Casa Bassa Project Image">
             </div>
-            <div>
+            <div class="col-md-6 col-lg-5">
               <h3>04. Restaurant Casa Bassa (Interior Design)</h3>
               <p>Floor plans drawings for project execution, carpentry, furniture and lighting technical drawings, on site visits and final delivery of the project.</p>
               <a href="#" class="button">View Project</a>
@@ -88,10 +147,10 @@
           </div>
 
           <div class="row">
-            <div>
+            <div class="col-md-6 col-lg-7">
                <img src="img/aprofutur/aprofutur-cover.webp" alt="Aprofutur Project Image">
             </div>
-            <div>
+            <div class="col-md-6 col-lg-5">
               <h3>05. Aprofutur (Food Design)</h3>
               <p>Aprofutur is a sensorial gastronomic experience designed from the fusion of sensorial-experiential interior design and gastronomy.</p>
               <a href="#" class="button">View Project</a>
@@ -99,10 +158,10 @@
           </div>
 
           <div class="row">
-            <div>
+            <div class="col-md-6 col-lg-7">
                <img src="img/pet-hotel/pet-hotel-cover.webp" alt="Pet Hotel Project Image">
             </div>
-            <div>
+            <div class="col-md-6 col-lg-5">
               <h3>06. Pet Hotel Guatemala (UX/UI Design)</h3>
               <p>Led the end-to-end design process, including market research and competitor analysis, creating and iterating on solution sketches and high-fidelity UI designs.</p>
               <a href="#" class="button">View Project</a>
@@ -126,12 +185,12 @@
           <ul style="list-style: none; padding: 0; display: flex; gap: 15px; justify-content: center;">
             <li>
               <a href="https://www.linkedin.com/in/alice-albieri" target="_blank">
-                <img src="img/icons/linkedin.svg" alt="LinkedIn" width="30" height="30">
+                <img src="img/linkedin.svg" alt="LinkedIn" width="30" height="30">
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/animacreativastudio?igsh=dHpncHk1MHhrcmJ1&utm_source=qr" target="_blank">
-                <img src="img/icons/instagram.svg" alt="Instagram" width="30" height="30">
+                <img src="img/instagram.svg" alt="Instagram" width="30" height="30">
               </a>
             </li>
           </ul>

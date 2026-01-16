@@ -6,7 +6,7 @@ Footer BG: Light Gray (#f0f0f0)
 
 /* --- 1. Global Box Sizing --- */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* */
 }
 
 /* --- 2. Base Settings & Typography --- */
@@ -28,17 +28,9 @@ h1, h2, h3, h4 {
   margin-bottom: 20px;
 }
 
-h1 {
-  font-size: 3em; 
-}
-
-h2 {
-  font-size: 2.25em;
-}
-
-h3 {
-  font-size: 1.75em;
-}
+h1 { font-size: 3em; }
+h2 { font-size: 2.25em; }
+h3 { font-size: 1.75em; }
 
 /* --- 3. Images --- */
 img {
@@ -47,32 +39,34 @@ img {
   display: block; 
 }
 
-/* --- 4. Links --- */
+/* --- 4. Links & Transitions --- */
 a {
   color: #2F11CA; 
-  text-decoration: underline; /* Default underline per mentor feedback */
-  font-weight: 400; /* Regular weight to prevent line-height issues */
-  transition: color 0.3s ease;
+  text-decoration: underline; 
+  font-weight: 400; 
+  /* Adding transition to links */
+  transition: color 0.3s ease, opacity 0.3s ease; 
 }
 
-a:visited {
-  color: #2F11CA;
-}
-
+a:visited { color: #2F11CA; }
 a:hover, a:focus {
   color: #000000; 
   text-decoration: underline;
 }
+a:active { color: #000000; }
 
-a:active {
-  color: #000000;
-}
-
-/* --- 5. Layout Classes --- */
+/* --- 5. Layout Classes (Mobile First) --- */
 .container {
   max-width: 1200px;
   margin: 0 auto; 
   padding: 0 15px; 
+}
+
+/* Clearing floats for the rows */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .row {
@@ -80,10 +74,7 @@ a:active {
   padding-bottom: 40px;
   border-bottom: 1px solid #e0e0e0; 
 }
-
-.row:last-child {
-  border-bottom: none;
-}
+.row:last-child { border-bottom: none; }
 
 /* --- 6. Header & Navigation --- */
 header {
@@ -93,7 +84,7 @@ header {
 }
 
 header .container {
-  text-align: center; 
+  text-align: center; /* Default center for Mobile */
 }
 
 .logo {
@@ -115,43 +106,34 @@ nav > ul > li {
   margin: 0 15px; 
 }
 
-/* Navigation Links Specifics */
 nav > ul > li > a {
   text-transform: uppercase;
-  font-weight: 700; /* Nav stays bold */
+  font-weight: 700; 
   color: #000000;
   font-size: 0.9em;
-  text-decoration: none; /* No underline for menu */
+  text-decoration: none; 
 }
 
 nav > ul > li > a:hover {
   color: #2F11CA; 
-  text-decoration: none;
 }
 
-/* --- 7. Hero Section --- */
+/* --- 7. Sections --- */
 .section-hero {
   background-color: #f4f4f4; 
   padding: 80px 0;
   text-align: center; 
 }
-
 .section-hero h1 {
   font-size: 3em;
   max-width: 800px;
   margin: 0 auto 20px auto; 
 }
+.section-hero span { color: #2F11CA; }
 
-.section-hero span {
-  color: #2F11CA; 
-}
+.section-work { padding: 60px 0; }
 
-/* --- 8. Work & Content Sections --- */
-.section-work {
-  padding: 60px 0;
-}
-
-/* --- 9. Buttons --- */
+/* --- 8. Buttons with Transitions --- */
 .button {
   display: inline-block; 
   background-color: #2F11CA; 
@@ -161,6 +143,8 @@ nav > ul > li > a:hover {
   border: 2px solid #2F11CA; 
   text-decoration: none !important; 
   margin-top: 10px;
+  /* Smooth fade effect */
+  transition: 0.3s all ease; 
 }
 
 .button:hover {
@@ -168,7 +152,6 @@ nav > ul > li > a:hover {
   color: #2F11CA !important; 
 }
 
-/* Footer Contact Button (Black outline for light gray footer) */
 .button.contact {
   background-color: transparent;
   color: #000000 !important; 
@@ -182,30 +165,88 @@ nav > ul > li > a:hover {
   border-color: #000000;
 }
 
-/* --- 10. Footer --- */
+/* --- 9. Footer --- */
 footer {
-  background-color: #f0f0f0; /* Light Gray */
-  color: #000000; /* Black Text */
+  background-color: #f0f0f0; 
+  color: #000000; 
   padding: 60px 0;
   text-align: center;
 }
-
-footer h2 {
-  color: #000000; 
-}
-
-footer a {
-  color: #000000; 
-  text-decoration: underline;
-}
-
-footer a:hover {
-  color: #2F11CA; 
-}
-
-/* Footer Social Icons Size */
+footer a { color: #000000; }
 footer ul li img {
   width: 20px; 
   height: auto;
   display: block; 
+}
+
+/* --- Medium devices (Tablets, 640px and up) --- */
+@media only screen and (min-width: 640px) {
+  
+  /* 1. Header Changes */
+  header {
+    text-align: unset; 
+    padding: 20px 0;
+  }
+
+  /* CRITICAL FIX: Forces the container to wrap around the floating logo/nav */
+  header .container {
+    overflow: hidden; 
+  }
+  
+  .logo {
+    margin: 0; 
+    float: left; 
+    max-width: 150px; /* Made smaller (was 250px) */
+  }
+  
+  nav {
+    float: right; 
+    width: auto;
+    margin-top: 15px; /* Pushes menu down slightly to align with the center of the logo */
+  }
+
+  /* 2. Grid System: 2-Column Layout */
+  [class*="col-"] {
+    float: left;
+    padding: 10px; 
+  }
+
+  .col-md-6 {
+    width: 50%;
+  }
+}
+
+/* --- Large devices (Desktops, 1024px and up) --- */
+@media only screen and (min-width: 1024px) {
+  
+  /* 3. Container limit */
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 4. Desktop Layout: 60/40 Split */
+  .col-lg-7 {
+    width: 58.33%; /* Approx 60% (7/12 columns) */
+  }
+  
+  .col-lg-5 {
+    width: 41.66%; /* Approx 40% (5/12 columns) */
+  }
+}
+
+/* --- Moon Phase Rotation Animation --- */
+@keyframes moon-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.moon-ring-anim {
+  /* Rotates the ring continuously */
+  animation: 30s moon-rotate infinite linear;
+  
+  /* CRITICAL FIX: Ensures it rotates around the group's 0,0 coordinate (the center) */
+  transform-box: view-box;
+  transform-origin: 0 0;
 }
