@@ -20,9 +20,9 @@ h1, h2, h3, h4 {
   margin-bottom: 20px;
 }
 
-h1 { font-size: 3em; }
-h2 { font-size: 2.25em; }
-h3 { font-size: 1.75em; }
+h1 { font-size: 2.2em; } 
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.5em; }
 
 img {
   width: 100%;
@@ -50,16 +50,13 @@ a:active { color: #000000; }
   padding: 0 15px; 
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 .row {
+  display: flex;
+  flex-wrap: wrap;
   margin: 40px 0; 
   padding-bottom: 40px;
   border-bottom: 1px solid #e0e0e0; 
+  gap: 20px;
 }
 
 .row:last-child { 
@@ -67,7 +64,7 @@ a:active { color: #000000; }
 }
 
 header {
-  padding: 15px 0;
+  padding: 10px 0;
   background-color: #ffffff;
   border-bottom: 2px solid #000000;
   position: fixed;
@@ -77,48 +74,17 @@ header {
 }
 
 header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
 }
 
 .logo {
-  max-width: 150px; 
-  display: block; 
-}
-
-.navtoggle, .navtoggle.responsive {
-  position: relative;
-}
-
-nav > ul > li:not(:last-child) {
-  display: none;
-}
-
-.navtoggle li .icon {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 0;
-}
-
-.navtoggle li .icon img {
-  width: 25px;
+  max-width: 80px;
+  display: block;
   height: auto;
-}
-
-.navtoggle.responsive nav {
-  padding: 24px 0 0;
-}
-
-.navtoggle.responsive li {
-  display: block; 
-  padding: 10px 0;
-  border-top: 1px solid rgba(0,0,0,0.1);
-}
-
-.navtoggle.responsive li:last-child {
-  padding: 10px 0 0;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  transition: max-width 0.3s ease; 
 }
 
 nav > ul {
@@ -130,41 +96,56 @@ nav > ul {
 nav > ul > li > a {
   text-transform: uppercase;
   font-weight: 700; 
-  color: #2F11CA;
+  color: #2F11CA; 
   font-size: 0.9em;
   text-decoration: none; 
 }
 
-nav > ul > li > a:hover {
-  color: #2F11CA; 
+.navtoggle li:not(:last-child) {
+  display: none;
+}
+
+.navtoggle li .icon {
+  position: absolute;
+  right: 0;
+  top: 12px; 
+  padding: 0;
+  cursor: pointer;
+}
+
+.navtoggle li .icon img {
+  width: 28px;
+  height: auto;
+}
+
+.navtoggle.responsive nav {
+  padding: 24px 0 0;
+}
+
+.navtoggle.responsive li {
+  display: block;
 }
 
 main {
-  padding-top: 100px; 
+  padding-top: 80px; 
 }
 
 #project-hero {
-  padding-top: 120px;
+  padding-top: 100px;
 }
 
 .section-hero {
   background-color: #f4f4f4; 
-  padding: 80px 0;
+  padding: 60px 0;
   text-align: center; 
 }
 
 .section-hero h1 {
-  font-size: 3em;
-  max-width: 800px;
   margin: 0 auto 20px auto; 
 }
 
 .section-hero span { 
   color: #2F11CA; 
-}
-
-.section-work { 
-  padding: 60px 0; 
 }
 
 .button {
@@ -186,76 +167,75 @@ main {
 
 footer {
   background-color: #f0f0f0; 
-  color: #000000; 
   padding: 60px 0;
   text-align: center;
 }
 
-footer a { 
-  color: #000000; 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 30px 0; 
 }
 
-footer ul li img {
-  width: 20px; 
-  height: auto;
-  display: block; 
+.social-svg {
+  width: 35px;         
+  height: 35px;
+  fill: #000000;      
+  transition: fill 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social-svg:hover {
+  fill: #2F11CA;       
+  transform: scale(1.1); 
+}
+
+@media only screen and (max-width: 640px) {
+  .social-icons a {
+    padding: 10px;    
+  }
 }
 
 @media only screen and (min-width: 640px) {
+  h1 { font-size: 3em; }
+
   header {
-    padding: 20px 0;
+    padding: 15px 0;
   }
 
-  header .container {
-    overflow: hidden; 
-  }
-  
   .logo {
-    float: left; 
-    max-width: 200px;
-  }
-  
-  nav {
-    float: right; 
-    width: auto;
-    margin-top: 10px;
-  }
-
-  nav > ul {
-    margin: 1em 0; 
+    max-width: 110px;
   }
 
   .navtoggle li:not(:last-child) {
     display: inline-block;
+    margin-left: 25px;
   }
   
   .navtoggle li:last-child {
     display: none;
   }
 
-  nav > ul > li {
-    display: inline-block; 
-    margin: 0 15px; 
-  }
-
-  [class*="col-"] {
-    float: left;
-    padding: 10px; 
+  nav > ul {
+    display: flex;
+    align-items: center;
   }
 
   .col-md-6 {
-    width: 50%;
+    flex: 1;
+    padding: 10px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .col-lg-7 {
-    width: 58.33%; 
+  .profile-img-container img {
+    max-width: 450px;
+    margin: 0 auto;
   }
   
-  .col-lg-5 {
-    width: 41.66%; 
-  }
+  .col-lg-7 { width: 60%; }
+  .col-lg-5 { width: 40%; }
 }
 
 @keyframes moon-rotate {
