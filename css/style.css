@@ -1,15 +1,7 @@
-/* BRAND COLORS:
-Main: Black (#000000) & White (#ffffff)
-Accent: Electric Blue (#2F11CA)
-Footer BG: Light Gray (#f0f0f0)
-*/
-
-/* --- 1. Global Box Sizing --- */
 * {
-  box-sizing: border-box; /* */
+  box-sizing: border-box;
 }
 
-/* --- 2. Base Settings & Typography --- */
 body {
   background-color: #ffffff;
   font-family: 'Inter', sans-serif; 
@@ -32,20 +24,17 @@ h1 { font-size: 3em; }
 h2 { font-size: 2.25em; }
 h3 { font-size: 1.75em; }
 
-/* --- 3. Images --- */
 img {
   width: 100%;
   height: auto;
   display: block; 
 }
 
-/* --- 4. Links & Transitions --- */
 a {
   color: #2F11CA; 
   text-decoration: underline; 
   font-weight: 400; 
-  /* Adding transition to links */
-  transition: color 0.3s ease, opacity 0.3s ease; 
+  transition: all 0.3s ease; 
 }
 
 a:visited { color: #2F11CA; }
@@ -55,14 +44,12 @@ a:hover, a:focus {
 }
 a:active { color: #000000; }
 
-/* --- 5. Layout Classes (Mobile First) --- */
 .container {
   max-width: 1200px;
   margin: 0 auto; 
   padding: 0 15px; 
 }
 
-/* Clearing floats for the rows */
 .row::after {
   content: "";
   clear: both;
@@ -74,25 +61,64 @@ a:active { color: #000000; }
   padding-bottom: 40px;
   border-bottom: 1px solid #e0e0e0; 
 }
-.row:last-child { border-bottom: none; }
 
-/* --- 6. Header & Navigation --- */
+.row:last-child { 
+  border-bottom: none; 
+}
+
 header {
-  padding: 20px 0;
+  padding: 15px 0;
   background-color: #ffffff;
-  border-bottom: 2px solid #000000; 
+  border-bottom: 2px solid #000000;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
 }
 
 header .container {
-  text-align: center; /* Default center for Mobile */
+  position: relative;
 }
 
 .logo {
-  max-width: 250px; 
-  margin-bottom: 20px;
+  max-width: 150px; 
   display: block; 
-  margin-left: auto;
-  margin-right: auto;
+}
+
+.navtoggle, .navtoggle.responsive {
+  position: relative;
+}
+
+nav > ul > li:not(:last-child) {
+  display: none;
+}
+
+.navtoggle li .icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+}
+
+.navtoggle li .icon img {
+  width: 25px;
+  height: auto;
+}
+
+.navtoggle.responsive nav {
+  padding: 24px 0 0;
+}
+
+.navtoggle.responsive li {
+  display: block; 
+  padding: 10px 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.navtoggle.responsive li:last-child {
+  padding: 10px 0 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
 }
 
 nav > ul {
@@ -101,15 +127,10 @@ nav > ul {
   margin: 0;
 }
 
-nav > ul > li {
-  display: inline-block; 
-  margin: 0 15px; 
-}
-
 nav > ul > li > a {
   text-transform: uppercase;
   font-weight: 700; 
-  color: #000000;
+  color: #2F11CA;
   font-size: 0.9em;
   text-decoration: none; 
 }
@@ -118,22 +139,34 @@ nav > ul > li > a:hover {
   color: #2F11CA; 
 }
 
-/* --- 7. Sections --- */
+main {
+  padding-top: 100px; 
+}
+
+#project-hero {
+  padding-top: 120px;
+}
+
 .section-hero {
   background-color: #f4f4f4; 
   padding: 80px 0;
   text-align: center; 
 }
+
 .section-hero h1 {
   font-size: 3em;
   max-width: 800px;
   margin: 0 auto 20px auto; 
 }
-.section-hero span { color: #2F11CA; }
 
-.section-work { padding: 60px 0; }
+.section-hero span { 
+  color: #2F11CA; 
+}
 
-/* --- 8. Buttons with Transitions --- */
+.section-work { 
+  padding: 60px 0; 
+}
+
 .button {
   display: inline-block; 
   background-color: #2F11CA; 
@@ -143,7 +176,6 @@ nav > ul > li > a:hover {
   border: 2px solid #2F11CA; 
   text-decoration: none !important; 
   margin-top: 10px;
-  /* Smooth fade effect */
   transition: 0.3s all ease; 
 }
 
@@ -152,60 +184,60 @@ nav > ul > li > a:hover {
   color: #2F11CA !important; 
 }
 
-.button.contact {
-  background-color: transparent;
-  color: #000000 !important; 
-  text-transform: uppercase;
-  border: 2px solid #000000; 
-}
-
-.button.contact:hover {
-  background-color: #000000; 
-  color: #ffffff !important; 
-  border-color: #000000;
-}
-
-/* --- 9. Footer --- */
 footer {
   background-color: #f0f0f0; 
   color: #000000; 
   padding: 60px 0;
   text-align: center;
 }
-footer a { color: #000000; }
+
+footer a { 
+  color: #000000; 
+}
+
 footer ul li img {
   width: 20px; 
   height: auto;
   display: block; 
 }
 
-/* --- Medium devices (Tablets, 640px and up) --- */
 @media only screen and (min-width: 640px) {
-  
-  /* 1. Header Changes */
   header {
-    text-align: unset; 
     padding: 20px 0;
   }
 
-  /* CRITICAL FIX: Forces the container to wrap around the floating logo/nav */
   header .container {
     overflow: hidden; 
   }
   
   .logo {
-    margin: 0; 
     float: left; 
-    max-width: 150px; /* Made smaller (was 250px) */
+    max-width: 200px;
   }
   
   nav {
     float: right; 
     width: auto;
-    margin-top: 15px; /* Pushes menu down slightly to align with the center of the logo */
+    margin-top: 10px;
   }
 
-  /* 2. Grid System: 2-Column Layout */
+  nav > ul {
+    margin: 1em 0; 
+  }
+
+  .navtoggle li:not(:last-child) {
+    display: inline-block;
+  }
+  
+  .navtoggle li:last-child {
+    display: none;
+  }
+
+  nav > ul > li {
+    display: inline-block; 
+    margin: 0 15px; 
+  }
+
   [class*="col-"] {
     float: left;
     padding: 10px; 
@@ -216,37 +248,23 @@ footer ul li img {
   }
 }
 
-/* --- Large devices (Desktops, 1024px and up) --- */
 @media only screen and (min-width: 1024px) {
-  
-  /* 3. Container limit */
-  .container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* 4. Desktop Layout: 60/40 Split */
   .col-lg-7 {
-    width: 58.33%; /* Approx 60% (7/12 columns) */
+    width: 58.33%; 
   }
   
   .col-lg-5 {
-    width: 41.66%; /* Approx 40% (5/12 columns) */
+    width: 41.66%; 
   }
 }
 
-/* --- Moon Phase Rotation Animation --- */
 @keyframes moon-rotate {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
 .moon-ring-anim {
-  /* Rotates the ring continuously */
   animation: 30s moon-rotate infinite linear;
-  
-  /* CRITICAL FIX: Ensures it rotates around the group's 0,0 coordinate (the center) */
   transform-box: view-box;
   transform-origin: 0 0;
 }

@@ -19,14 +19,21 @@
 
     <header>
       <div class="container">
-        <img src="img/anima-creativa/logo-black.svg" alt="ANIMA CREATIVA STUDIO Logo" class="logo">
-        <nav>
-          <ul>
-            <li><a href="index.html">Work</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+        <div class="navtoggle" id="myNavtoggle">
+          <img src="img/anima-creativa/logo-black.svg" alt="ANIMA CREATIVA STUDIO Logo" class="logo">
+          <nav>
+            <ul>
+              <li><a href="index.html">Work</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#contact" onclick="menuToggle()">Contact</a></li>
+              <li>
+                <a href="javascript:void(0);" class="icon" onclick="menuToggle()">
+                  <img src="img/icons/bars-solid-full.svg" alt="Menu Icon" style="width: 20px; height: 20px;">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -85,7 +92,7 @@
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/animacreativastudio?igsh=dHpncHk1MHhrcmJ1&utm_source=qr" target="_blank">
+              <a href="https://www.instagram.com/animacreativastudio" target="_blank">
                 <img src="img/icons/instagram.svg" alt="Instagram" width="30" height="30">
               </a>
             </li>
@@ -96,5 +103,8 @@
       </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <script src="js/scripts.js"></script>
   </body>
 </html>
