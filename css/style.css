@@ -210,7 +210,7 @@ footer {
 
   .navtoggle li:not(:last-child) {
     display: inline-block;
-    margin-left: 25px;
+    margin-left: 50px;
   }
   
   .navtoggle li:last-child {
