@@ -119,16 +119,7 @@ nav > ul > li > a {
 }
 
 .navtoggle.responsive nav {
-  position: fixed;
-  right: 25px; 
-  top: 54px; 
-  background-color: #ffffff;
-  padding: 20px;
-  border: 1px solid #000000;
-  z-index: 1001;
-  min-width: 200px;
-  text-align: right;
-  box-shadow: -5px 5px 10px rgba(0,0,0,0.05);
+  padding: 24px 0 0;
 }
 
 .navtoggle.responsive li {
